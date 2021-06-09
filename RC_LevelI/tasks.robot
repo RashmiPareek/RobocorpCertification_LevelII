@@ -17,7 +17,9 @@ Make Directory Empty
     Log To Console    ${folderName}
     FOR    ${item}    IN    @{folderName}
         Log    ${item}
-        Empty Directory     ${CURDIR}${/}${item}
+        #Empty Directory     ${CURDIR}${/}${item}    
+        Remove Directory    ${CURDIR}${/}${item}     True
+        Create Directory     ${CURDIR}${/}${item}
      END
 
 ***** Keywords ***
